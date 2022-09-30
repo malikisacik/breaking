@@ -15,6 +15,7 @@
 		8620192528E7399900FA8352 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8620192328E7399900FA8352 /* LaunchScreen.storyboard */; };
 		8620192D28E739F800FA8352 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620192C28E739F800FA8352 /* NetworkManager.swift */; };
 		8620193028E73A4400FA8352 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8620192F28E73A4400FA8352 /* Alamofire */; };
+		8620193328E73C5200FA8352 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193228E73C5200FA8352 /* NetworkConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8620192428E7399900FA8352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8620192628E7399900FA8352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8620192C28E739F800FA8352 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8620193228E73C5200FA8352 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				8620191828E7399600FA8352 /* AppDelegate.swift */,
+				8620193428E73C5600FA8352 /* Constants */,
 				8620191A28E7399600FA8352 /* SceneDelegate.swift */,
 				8620191C28E7399600FA8352 /* ViewController.swift */,
 				8620191E28E7399600FA8352 /* Main.storyboard */,
@@ -78,6 +81,14 @@
 				8620192C28E739F800FA8352 /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8620193428E73C5600FA8352 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8620193228E73C5200FA8352 /* NetworkConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 			files = (
 				8620192D28E739F800FA8352 /* NetworkManager.swift in Sources */,
 				8620191D28E7399600FA8352 /* ViewController.swift in Sources */,
+				8620193328E73C5200FA8352 /* NetworkConstants.swift in Sources */,
 				8620191928E7399600FA8352 /* AppDelegate.swift in Sources */,
 				8620191B28E7399600FA8352 /* SceneDelegate.swift in Sources */,
 			);
