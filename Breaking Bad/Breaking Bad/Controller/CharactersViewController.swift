@@ -24,6 +24,7 @@ class CharactersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCharacters()
+        charactersCollectionView.reloadData()
     }
 
     private func fetchCharacters() {
@@ -32,7 +33,6 @@ class CharactersViewController: UIViewController {
             case .success(let result):
                 self?.characters = result
                 self?.charactersCollectionView.reloadData()
-                self?.filterCharacters(searchText: "Gus")
             case .failure(let failure):
                 print(failure.errorDescription ?? "")
             }
@@ -40,6 +40,7 @@ class CharactersViewController: UIViewController {
     }
 
     private func filterCharacters(searchText: String) {
+
         let filteredCharacters = characters?.filter({ character in
             if character.name?.contains(searchText) ?? false {
                 return true
@@ -85,6 +86,16 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    }
+
+}
+
+extension CharactersViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let searchText = searchBar.text {
+            filterCharacters(searchText: searchText)
+        }
     }
 
 }
