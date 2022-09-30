@@ -13,6 +13,8 @@
 		8620192028E7399600FA8352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8620191E28E7399600FA8352 /* Main.storyboard */; };
 		8620192228E7399900FA8352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8620192128E7399900FA8352 /* Assets.xcassets */; };
 		8620192528E7399900FA8352 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8620192328E7399900FA8352 /* LaunchScreen.storyboard */; };
+		8620192D28E739F800FA8352 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620192C28E739F800FA8352 /* NetworkManager.swift */; };
+		8620193028E73A4400FA8352 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8620192F28E73A4400FA8352 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,7 @@
 		8620192128E7399900FA8352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8620192428E7399900FA8352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8620192628E7399900FA8352 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8620192C28E739F800FA8352 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8620193028E73A4400FA8352 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +67,17 @@
 				8620192128E7399900FA8352 /* Assets.xcassets */,
 				8620192328E7399900FA8352 /* LaunchScreen.storyboard */,
 				8620192628E7399900FA8352 /* Info.plist */,
+				8620193128E73A4B00FA8352 /* Network */,
 			);
 			path = "Breaking Bad";
+			sourceTree = "<group>";
+		};
+		8620193128E73A4B00FA8352 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8620192C28E739F800FA8352 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = "Breaking Bad";
+			packageProductDependencies = (
+				8620192F28E73A4400FA8352 /* Alamofire */,
+			);
 			productName = "Breaking Bad";
 			productReference = 8620191528E7399600FA8352 /* Breaking Bad.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 8620190C28E7399600FA8352;
+			packageReferences = (
+				8620192E28E73A4400FA8352 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8620191628E7399600FA8352 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8620192D28E739F800FA8352 /* NetworkManager.swift in Sources */,
 				8620191D28E7399600FA8352 /* ViewController.swift in Sources */,
 				8620191928E7399600FA8352 /* AppDelegate.swift in Sources */,
 				8620191B28E7399600FA8352 /* SceneDelegate.swift in Sources */,
@@ -358,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8620192E28E73A4400FA8352 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8620192F28E73A4400FA8352 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8620192E28E73A4400FA8352 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8620190D28E7399600FA8352 /* Project object */;
 }
