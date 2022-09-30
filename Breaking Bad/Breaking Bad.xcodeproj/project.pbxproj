@@ -17,6 +17,8 @@
 		8620193028E73A4400FA8352 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8620192F28E73A4400FA8352 /* Alamofire */; };
 		8620193328E73C5200FA8352 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193228E73C5200FA8352 /* NetworkConstants.swift */; };
 		8620193628E73E1C00FA8352 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193528E73E1C00FA8352 /* Character.swift */; };
+		8620193D28E74A1C00FA8352 /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193B28E74A1C00FA8352 /* CharactersCollectionViewCell.swift */; };
+		8620193E28E74A1C00FA8352 /* CharactersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		8620192C28E739F800FA8352 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8620193228E73C5200FA8352 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		8620193528E73E1C00FA8352 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		8620193B28E74A1C00FA8352 /* CharactersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionViewCell.swift; sourceTree = "<group>"; };
+		8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +72,13 @@
 				8620193428E73C5600FA8352 /* Constants */,
 				8620191A28E7399600FA8352 /* SceneDelegate.swift */,
 				8620193928E7450E00FA8352 /* Controller */,
-				8620191E28E7399600FA8352 /* Main.storyboard */,
+				8620193A28E7462300FA8352 /* View */,
 				8620192128E7399900FA8352 /* Assets.xcassets */,
 				8620192328E7399900FA8352 /* LaunchScreen.storyboard */,
 				8620192628E7399900FA8352 /* Info.plist */,
 				8620193128E73A4B00FA8352 /* Network */,
 				8620193728E73E2F00FA8352 /* Model */,
+				8620193F28E74A2700FA8352 /* Cells */,
 			);
 			path = "Breaking Bad";
 			sourceTree = "<group>";
@@ -108,6 +113,23 @@
 				8620191C28E7399600FA8352 /* ViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8620193A28E7462300FA8352 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8620191E28E7399600FA8352 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8620193F28E74A2700FA8352 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8620193B28E74A1C00FA8352 /* CharactersCollectionViewCell.swift */,
+				8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8620193E28E74A1C00FA8352 /* CharactersCollectionViewCell.xib in Resources */,
 				8620192528E7399900FA8352 /* LaunchScreen.storyboard in Resources */,
 				8620192228E7399900FA8352 /* Assets.xcassets in Resources */,
 				8620192028E7399600FA8352 /* Main.storyboard in Resources */,
@@ -187,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8620193D28E74A1C00FA8352 /* CharactersCollectionViewCell.swift in Sources */,
 				8620192D28E739F800FA8352 /* NetworkManager.swift in Sources */,
 				8620191D28E7399600FA8352 /* ViewController.swift in Sources */,
 				8620193328E73C5200FA8352 /* NetworkConstants.swift in Sources */,

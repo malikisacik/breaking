@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var charactersCollectionView: UICollectionView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
