@@ -52,8 +52,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
 
         if let characters = characters {
-            cell.characterNameLabel.text = characters[indexPath.row].name
-            cell.characterImageView.kf.setImage(with: URL(string: characters[indexPath.row].img ?? ""))
+            cell.setup(character: characters[indexPath.row])
         }
 
         return cell
