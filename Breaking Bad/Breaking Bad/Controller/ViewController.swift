@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var charactersCollectionView: UICollectionView!
+    @IBOutlet weak var charactersCollectionView: UICollectionView! {
+        didSet {
+            charactersCollectionView.delegate = self
+            charactersCollectionView.dataSource = self
+            charactersCollectionView.register(UINib(nibName: String.init(describing: CharactersCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String.init(describing:  CharactersCollectionViewCell.self))
+        }
+    }
+
+    private var characters: Characters?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +27,11 @@ class ViewController: UIViewController {
     }
 
     private func fetchCharacters() {
-        NetworkManager.shared.fetchCharacters { results in
+        NetworkManager.shared.fetchCharacters { [weak self] results in
             switch results {
             case .success(let result):
-                print(result)
+                self?.characters = result
+                self?.charactersCollectionView.reloadData()
             case .failure(let failure):
                 print(failure.errorDescription ?? "")
             }
@@ -30,3 +40,39 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return characters?.count ?? 0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = charactersCollectionView.dequeueReusableCell(withReuseIdentifier: String.init(describing: CharactersCollectionViewCell.self), for: indexPath) as? CharactersCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+
+        if let characters = characters {
+            cell.characterNameLabel.text = characters[indexPath.row].name
+            cell.characterImageView.kf.setImage(with: URL(string: characters[indexPath.row].img ?? ""))
+        }
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.size.width/3 - 3, height: collectionView.frame.size.height/3 - 3)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+    }
+
+}

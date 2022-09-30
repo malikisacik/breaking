@@ -19,6 +19,7 @@
 		8620193628E73E1C00FA8352 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193528E73E1C00FA8352 /* Character.swift */; };
 		8620193D28E74A1C00FA8352 /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193B28E74A1C00FA8352 /* CharactersCollectionViewCell.swift */; };
 		8620193E28E74A1C00FA8352 /* CharactersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */; };
+		8620194228E777C500FA8352 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8620194128E777C500FA8352 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8620194228E777C500FA8352 /* Kingfisher in Frameworks */,
 				8620193028E73A4400FA8352 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,16 +71,16 @@
 			isa = PBXGroup;
 			children = (
 				8620191828E7399600FA8352 /* AppDelegate.swift */,
-				8620193428E73C5600FA8352 /* Constants */,
 				8620191A28E7399600FA8352 /* SceneDelegate.swift */,
-				8620193928E7450E00FA8352 /* Controller */,
+				8620193128E73A4B00FA8352 /* Network */,
+				8620193F28E74A2700FA8352 /* Cells */,
+				8620193428E73C5600FA8352 /* Constants */,
+				8620193728E73E2F00FA8352 /* Model */,
 				8620193A28E7462300FA8352 /* View */,
+				8620193928E7450E00FA8352 /* Controller */,
 				8620192128E7399900FA8352 /* Assets.xcassets */,
 				8620192328E7399900FA8352 /* LaunchScreen.storyboard */,
 				8620192628E7399900FA8352 /* Info.plist */,
-				8620193128E73A4B00FA8352 /* Network */,
-				8620193728E73E2F00FA8352 /* Model */,
-				8620193F28E74A2700FA8352 /* Cells */,
 			);
 			path = "Breaking Bad";
 			sourceTree = "<group>";
@@ -150,6 +152,7 @@
 			name = "Breaking Bad";
 			packageProductDependencies = (
 				8620192F28E73A4400FA8352 /* Alamofire */,
+				8620194128E777C500FA8352 /* Kingfisher */,
 			);
 			productName = "Breaking Bad";
 			productReference = 8620191528E7399600FA8352 /* Breaking Bad.app */;
@@ -181,6 +184,7 @@
 			mainGroup = 8620190C28E7399600FA8352;
 			packageReferences = (
 				8620192E28E73A4400FA8352 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8620194028E777C500FA8352 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 8620191628E7399600FA8352 /* Products */;
 			projectDirPath = "";
@@ -444,6 +448,14 @@
 				kind = branch;
 			};
 		};
+		8620194028E777C500FA8352 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -451,6 +463,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8620192E28E73A4400FA8352 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		8620194128E777C500FA8352 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8620194028E777C500FA8352 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
