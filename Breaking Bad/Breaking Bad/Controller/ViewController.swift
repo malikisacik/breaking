@@ -10,6 +10,7 @@ import Kingfisher
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var characterSearchBar: UISearchBar!
     @IBOutlet weak var charactersCollectionView: UICollectionView! {
         didSet {
             charactersCollectionView.delegate = self
