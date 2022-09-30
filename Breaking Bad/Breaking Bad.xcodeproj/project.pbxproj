@@ -67,7 +67,7 @@
 				8620191828E7399600FA8352 /* AppDelegate.swift */,
 				8620193428E73C5600FA8352 /* Constants */,
 				8620191A28E7399600FA8352 /* SceneDelegate.swift */,
-				8620191C28E7399600FA8352 /* ViewController.swift */,
+				8620193928E7450E00FA8352 /* Controller */,
 				8620191E28E7399600FA8352 /* Main.storyboard */,
 				8620192128E7399900FA8352 /* Assets.xcassets */,
 				8620192328E7399900FA8352 /* LaunchScreen.storyboard */,
@@ -100,6 +100,14 @@
 				8620193528E73E1C00FA8352 /* Character.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8620193928E7450E00FA8352 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8620191C28E7399600FA8352 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
