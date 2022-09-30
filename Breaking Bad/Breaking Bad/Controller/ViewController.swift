@@ -22,7 +22,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         fetchCharacters()
     }
 
@@ -32,10 +31,23 @@ class ViewController: UIViewController {
             case .success(let result):
                 self?.characters = result
                 self?.charactersCollectionView.reloadData()
+                self?.filterCharacters(searchText: "Gus")
             case .failure(let failure):
                 print(failure.errorDescription ?? "")
             }
         }
+    }
+
+    private func filterCharacters(searchText: String) {
+        let filteredCharacters = characters?.filter({ character in
+            if character.name?.contains(searchText) ?? false {
+                return true
+            } else {
+                return false
+            }
+        })
+        characters = filteredCharacters
+        charactersCollectionView.reloadData()
     }
 
 }
