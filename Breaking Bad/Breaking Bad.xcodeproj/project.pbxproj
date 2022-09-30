@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8620191928E7399600FA8352 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620191828E7399600FA8352 /* AppDelegate.swift */; };
 		8620191B28E7399600FA8352 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620191A28E7399600FA8352 /* SceneDelegate.swift */; };
-		8620191D28E7399600FA8352 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620191C28E7399600FA8352 /* ViewController.swift */; };
+		8620191D28E7399600FA8352 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620191C28E7399600FA8352 /* CharactersViewController.swift */; };
 		8620192028E7399600FA8352 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8620191E28E7399600FA8352 /* Main.storyboard */; };
 		8620192228E7399900FA8352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8620192128E7399900FA8352 /* Assets.xcassets */; };
 		8620192528E7399900FA8352 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8620192328E7399900FA8352 /* LaunchScreen.storyboard */; };
@@ -26,7 +26,7 @@
 		8620191528E7399600FA8352 /* Breaking Bad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Breaking Bad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8620191828E7399600FA8352 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8620191A28E7399600FA8352 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8620191C28E7399600FA8352 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8620191C28E7399600FA8352 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		8620191F28E7399600FA8352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8620192128E7399900FA8352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8620192428E7399900FA8352 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		8620193928E7450E00FA8352 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8620191C28E7399600FA8352 /* ViewController.swift */,
+				8620191C28E7399600FA8352 /* CharactersViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 			files = (
 				8620193D28E74A1C00FA8352 /* CharactersCollectionViewCell.swift in Sources */,
 				8620192D28E739F800FA8352 /* NetworkManager.swift in Sources */,
-				8620191D28E7399600FA8352 /* ViewController.swift in Sources */,
+				8620191D28E7399600FA8352 /* CharactersViewController.swift in Sources */,
 				8620193328E73C5200FA8352 /* NetworkConstants.swift in Sources */,
 				8620193628E73E1C00FA8352 /* Character.swift in Sources */,
 				8620191928E7399600FA8352 /* AppDelegate.swift in Sources */,

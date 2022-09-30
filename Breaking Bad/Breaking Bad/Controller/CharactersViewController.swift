@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharactersViewController.swift
 //  Breaking Bad
 //
 //  Created by Mehmet Ali Kısacık on 30.09.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class ViewController: UIViewController {
+class CharactersViewController: UIViewController {
 
     @IBOutlet weak var characterSearchBar: UISearchBar!
     @IBOutlet weak var charactersCollectionView: UICollectionView! {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return characters?.count ?? 0
