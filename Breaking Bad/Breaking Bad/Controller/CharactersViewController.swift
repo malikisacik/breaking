@@ -122,4 +122,11 @@ extension CharactersViewController: UISearchBarDelegate {
         }
     }
 
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        cancelSearchButtonWidth.constant = 80
+        UIView.animate(withDuration: 0.3,delay: 0,options: .curveEaseOut) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
 }
