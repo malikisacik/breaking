@@ -34,20 +34,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BVG-Mg-AbZ"/>
                                 </connections>
                             </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z32-Qy-lDS">
+                                <rect key="frame" x="390" y="47" width="0.0" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="n4i-2T-DXr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sNb-Ie-S3w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="087-cz-XoB"/>
-                            <constraint firstItem="sNb-Ie-S3w" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6u9-ID-fEe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r4P-Xj-lHy" secondAttribute="bottom" id="LHS-K7-zYT"/>
+                            <constraint firstItem="z32-Qy-lDS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="R8U-Tu-b7h"/>
+                            <constraint firstItem="z32-Qy-lDS" firstAttribute="leading" secondItem="sNb-Ie-S3w" secondAttribute="trailing" id="TYX-WC-DkW"/>
                             <constraint firstItem="r4P-Xj-lHy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ToM-b8-lFI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r4P-Xj-lHy" secondAttribute="trailing" id="Y8A-na-xKR"/>
                             <constraint firstItem="r4P-Xj-lHy" firstAttribute="top" secondItem="sNb-Ie-S3w" secondAttribute="bottom" id="ZF1-jR-j8k"/>
                             <constraint firstItem="sNb-Ie-S3w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dOS-N9-7ru"/>
+                            <constraint firstItem="r4P-Xj-lHy" firstAttribute="top" secondItem="z32-Qy-lDS" secondAttribute="bottom" id="gU0-99-8ZN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z32-Qy-lDS" secondAttribute="trailing" id="szY-Wt-kTc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelSearchButton" destination="z32-Qy-lDS" id="XX3-sP-gs6"/>
+                        <outlet property="cancelSearchButtonWidth" destination="n4i-2T-DXr" id="lzI-z2-1JT"/>
                         <outlet property="characterSearchBar" destination="sNb-Ie-S3w" id="rXr-D7-gdY"/>
                         <outlet property="charactersCollectionView" destination="r4P-Xj-lHy" id="yKE-RU-5QP"/>
                     </connections>

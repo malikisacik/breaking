@@ -10,7 +10,6 @@ import Kingfisher
 
 class CharactersViewController: UIViewController {
 
-    @IBOutlet weak var characterSearchBar: UISearchBar!
     @IBOutlet weak var charactersCollectionView: UICollectionView! {
         didSet {
             charactersCollectionView.delegate = self
@@ -18,6 +17,10 @@ class CharactersViewController: UIViewController {
             charactersCollectionView.register(UINib(nibName: String.init(describing: CharactersCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String.init(describing:  CharactersCollectionViewCell.self))
         }
     }
+
+    @IBOutlet weak var characterSearchBar: UISearchBar!
+    @IBOutlet weak var cancelSearchButton: UIButton!
+    @IBOutlet weak var cancelSearchButtonWidth: NSLayoutConstraint!
 
     private var fetchCharactersDispatchGroup = DispatchGroup()
     private var allCharacters: Characters?
