@@ -20,7 +20,8 @@ class CharactersViewController: UIViewController {
     }
 
     private var allCharacters: Characters?
-
+    private var filteredCharacters: Characters?
+    private var isFiltered = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,6 @@ class CharactersViewController: UIViewController {
     }
 
     private func filterCharacters(searchText: String) {
-
         let filteredCharacters = allCharacters?.filter({ character in
             if character.name?.contains(searchText) ?? false {
                 return true
@@ -49,8 +49,7 @@ class CharactersViewController: UIViewController {
                 return false
             }
         })
-        allCharacters = filteredCharacters
-        charactersCollectionView.reloadData()
+        self.filteredCharacters = filteredCharacters
     }
 
 }
@@ -58,7 +57,7 @@ class CharactersViewController: UIViewController {
 extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allCharacters?.count ?? 0
+        return isFiltered ? filteredCharacters?.count ?? 0 : allCharacters?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -66,8 +65,14 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
 
-        if let characters = allCharacters {
-            cell.setup(character: characters[indexPath.row])
+        if isFiltered {
+            if let characters = filteredCharacters {
+                cell.setup(character: characters[indexPath.row])
+            }
+        } else {
+            if let characters = allCharacters {
+                cell.setup(character: characters[indexPath.row])
+            }
         }
 
         return cell
@@ -96,6 +101,8 @@ extension CharactersViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         if let searchText = searchBar.text {
             filterCharacters(searchText: searchText)
+            isFiltered = true
+            charactersCollectionView.reloadData()
         }
     }
 
