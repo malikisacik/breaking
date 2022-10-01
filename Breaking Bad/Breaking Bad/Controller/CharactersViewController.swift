@@ -47,7 +47,7 @@ class CharactersViewController: UIViewController {
 
     private func filterCharacters(searchText: String) {
         let filteredCharacters = allCharacters?.filter({ character in
-            if character.name?.contains(searchText) ?? false {
+            if character.name?.lowercased().contains(searchText.lowercased()) ?? false {
                 return true
             } else {
                 return false
