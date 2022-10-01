@@ -101,8 +101,17 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
 }
 
 extension CharactersViewController: UISearchBarDelegate {
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        if let searchText = searchBar.text {
+            filterCharacters(searchText: searchText)
+            isCharactersFiltered = true
+            charactersCollectionView.reloadData()
+        }
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let searchText = searchBar.text {
             filterCharacters(searchText: searchText)
             isCharactersFiltered = true
