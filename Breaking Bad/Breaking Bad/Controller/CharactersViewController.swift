@@ -19,7 +19,8 @@ class CharactersViewController: UIViewController {
         }
     }
 
-    private var characters: Characters?
+    private var allCharacters: Characters?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class CharactersViewController: UIViewController {
         NetworkManager.shared.fetchCharacters { [weak self] results in
             switch results {
             case .success(let result):
-                self?.characters = result
+                self?.allCharacters = result
                 self?.charactersCollectionView.reloadData()
             case .failure(let failure):
                 print(failure.errorDescription ?? "")
@@ -41,14 +42,14 @@ class CharactersViewController: UIViewController {
 
     private func filterCharacters(searchText: String) {
 
-        let filteredCharacters = characters?.filter({ character in
+        let filteredCharacters = allCharacters?.filter({ character in
             if character.name?.contains(searchText) ?? false {
                 return true
             } else {
                 return false
             }
         })
-        characters = filteredCharacters
+        allCharacters = filteredCharacters
         charactersCollectionView.reloadData()
     }
 
@@ -57,7 +58,7 @@ class CharactersViewController: UIViewController {
 extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return characters?.count ?? 0
+        return allCharacters?.count ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -65,7 +66,7 @@ extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
 
-        if let characters = characters {
+        if let characters = allCharacters {
             cell.setup(character: characters[indexPath.row])
         }
 
