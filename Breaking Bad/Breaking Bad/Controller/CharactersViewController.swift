@@ -33,6 +33,8 @@ class CharactersViewController: UIViewController {
         fetchCharactersDispatchGroup.notify(queue: .main) {
             self.charactersCollectionView.reloadData()
         }
+
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerFetchCharacters), userInfo: nil, repeats: true)
     }
 
     private func fetchCharacters() {
@@ -57,6 +59,10 @@ class CharactersViewController: UIViewController {
             }
         })
         self.filteredCharacters = filteredCharacters
+    }
+
+    @objc private func timerFetchCharacters(){
+        fetchCharacters()
     }
 
     @IBAction func cancelSearchButtonClicked(_ sender: UIButton) {
