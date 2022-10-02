@@ -59,6 +59,17 @@ class CharactersViewController: UIViewController {
         self.filteredCharacters = filteredCharacters
     }
 
+    @IBAction func cancelSearchButtonClicked(_ sender: UIButton) {
+        characterSearchBar.resignFirstResponder()
+        characterSearchBar.text = ""
+        cancelSearchButtonWidth.constant = 0
+        UIView.animate(withDuration: 0.3,delay: 0,options: .curveEaseOut) {
+            self.view.layoutIfNeeded()
+        }
+        isCharactersFiltered = false
+        charactersCollectionView.reloadData()
+    }
+
 }
 
 extension CharactersViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
