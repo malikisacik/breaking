@@ -20,6 +20,7 @@
 		8620193D28E74A1C00FA8352 /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8620193B28E74A1C00FA8352 /* CharactersCollectionViewCell.swift */; };
 		8620193E28E74A1C00FA8352 /* CharactersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */; };
 		8620194228E777C500FA8352 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8620194128E777C500FA8352 /* Kingfisher */; };
+		86E413F428E9E99F0048D0EE /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E413F328E9E99F0048D0EE /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8620193528E73E1C00FA8352 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		8620193B28E74A1C00FA8352 /* CharactersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionViewCell.swift; sourceTree = "<group>"; };
 		8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharactersCollectionViewCell.xib; sourceTree = "<group>"; };
+		86E413F328E9E99F0048D0EE /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				8620193128E73A4B00FA8352 /* Network */,
 				8620193F28E74A2700FA8352 /* Cells */,
 				8620193428E73C5600FA8352 /* Constants */,
+				86E413F528E9E9B60048D0EE /* Extensions */,
 				8620193728E73E2F00FA8352 /* Model */,
 				8620193A28E7462300FA8352 /* View */,
 				8620193928E7450E00FA8352 /* Controller */,
@@ -132,6 +135,14 @@
 				8620193C28E74A1C00FA8352 /* CharactersCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		86E413F528E9E9B60048D0EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				86E413F328E9E99F0048D0EE /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				8620193328E73C5200FA8352 /* NetworkConstants.swift in Sources */,
 				8620193628E73E1C00FA8352 /* Character.swift in Sources */,
 				8620191928E7399600FA8352 /* AppDelegate.swift in Sources */,
+				86E413F428E9E99F0048D0EE /* UIImageView+Extensions.swift in Sources */,
 				8620191B28E7399600FA8352 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,11 +22,7 @@ class CharactersCollectionViewCell: UICollectionViewCell {
         if let characterName = character.name {
             characterNameLabel.text = characterName
         }
-
-        if let characterImageURLString = character.img {
-            let processor = DownsamplingImageProcessor(size: characterImageView.frame.size )
-            characterImageView.kf.setImage(with: URL(string: characterImageURLString), options: [.processor(processor),.scaleFactor(UIScreen.main.scale),.transition(.fade(1)),.cacheOriginalImage] )
-        }
+        characterImageView.setImageWithPath(imageURLString: character.img)
     }
 
 }
