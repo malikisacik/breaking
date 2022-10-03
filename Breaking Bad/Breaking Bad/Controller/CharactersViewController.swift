@@ -23,6 +23,7 @@ class CharactersViewController: UIViewController {
     @IBOutlet weak var cancelSearchButtonWidth: NSLayoutConstraint!
 
     private var fetchCharactersDispatchGroup = DispatchGroup()
+    private var tapOutside = UITapGestureRecognizer()
     private var allCharacters: Characters?
     private var filteredCharacters: Characters?
     private var isCharactersFiltered = false
@@ -34,6 +35,7 @@ class CharactersViewController: UIViewController {
             self.charactersCollectionView.reloadData()
         }
 
+        setupTapOutside()
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(timerFetchCharacters), userInfo: nil, repeats: true)
     }
 
@@ -61,8 +63,10 @@ class CharactersViewController: UIViewController {
         self.filteredCharacters = filteredCharacters
     }
 
-    @objc func timerFetchCharacters() {
-        fetchCharacters()
+    private func setupTapOutside() {
+        tapOutside = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
     }
 
     @IBAction func cancelSearchButtonClicked(_ sender: UIButton) {
@@ -74,6 +78,22 @@ class CharactersViewController: UIViewController {
         }
         isCharactersFiltered = false
         charactersCollectionView.reloadData()
+    }
+
+    @objc func timerFetchCharacters() {
+        fetchCharacters()
+    }
+
+    @objc private func dismissKeyboard() {
+        characterSearchBar.resignFirstResponder()
+    }
+
+    @objc private func keyboardWillShow() {
+        view.addGestureRecognizer(tapOutside)
+    }
+
+    @objc private func keyboardDidHide() {
+        view.removeGestureRecognizer(tapOutside)
     }
 
 }
