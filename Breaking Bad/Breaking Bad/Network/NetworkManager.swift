@@ -21,7 +21,6 @@ final class NetworkManager {
 
     func fetchCharacters (completion: @escaping (Result<Characters,AFError>) -> Void ) {
         components.path = "/api/characters"
-
         if let urlString = components.string {
             AF.request(urlString, method: .get).responseDecodable(of: Characters.self) { response in
                 completion(response.result)
