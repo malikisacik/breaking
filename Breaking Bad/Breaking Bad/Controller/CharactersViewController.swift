@@ -43,10 +43,10 @@ class CharactersViewController: UIViewController {
         fetchCharactersDispatchGroup.enter()
         NetworkManager.shared.fetchCharacters { [weak self] results in
             switch results {
-            case .success(let result):
-                self?.allCharacters = result
-            case .failure(let failure):
-                print(failure.errorDescription ?? "")
+            case .success(let characters):
+                self?.allCharacters = characters
+            case .failure(let err):
+                print(err.errorDescription ?? "")
             }
             self?.fetchCharactersDispatchGroup.leave()
         }
