@@ -61,7 +61,7 @@ class CharactersViewController: UIViewController {
         self.filteredCharacters = filteredCharacters
     }
 
-    @objc private func timerFetchCharacters(){
+    @objc func timerFetchCharacters() {
         fetchCharacters()
     }
 
@@ -129,17 +129,7 @@ extension CharactersViewController: UISearchBarDelegate {
             isCharactersFiltered = true
             charactersCollectionView.reloadData()
         }
-    }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if let searchText = searchBar.text {
-            filterCharacters(searchText: searchText)
-            isCharactersFiltered = true
-            charactersCollectionView.reloadData()
-        }
-    }
-
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         cancelSearchButtonWidth.constant = 80
         UIView.animate(withDuration: 0.3,delay: 0,options: .curveEaseOut) {
             self.view.layoutIfNeeded()
